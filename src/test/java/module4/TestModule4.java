@@ -7,19 +7,21 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Set;
 
 public class TestModule4 {
 
     @Test
     public void testParseCities() {
-        List<City> expected = List.of(
-                new City("Адыгейск","Адыгея","Южный","144246","1830"),
-                new City("Майкоп","Адыгея","Южный","233232","1835"),
-                new City("Алтайск","Алтай","Сибирь","232345","1826"),
-                new City("Челябинск","Челябинская область","Урал","","")
+        List<RegionCounter.RegionCountRow> expected = List.of(
+                new RegionCounter.RegionCountRow("Адыгея", 2),
+                new RegionCounter.RegionCountRow("Московская область", 4),
+                new RegionCounter.RegionCountRow("Алтай", 1),
+                new RegionCounter.RegionCountRow("Челябинская область", 1)
         );
-        List<City> cities = Main.parseCitiesFromFile(Util.getFileFromResources("cities_catalog.txt"));
-        Assert.assertEquals(expected, cities);
+        List<City> cities = Main.parseCitiesFromFile(Util.getFileFromResources("cities_catalog_for_region_count.txt"));
+        List<RegionCounter.RegionCountRow> regionCountRows = RegionCounter.getRegionCountRows(cities);
+        Assert.assertEquals(expected, regionCountRows);
     }
 
 }
