@@ -14,7 +14,7 @@ public class Main {
     private static final String MOCK = "null";
 
     public static void main(String[] args) {
-        String fileName = "cities_catalog_for_sort.txt";
+        String fileName = "cities_catalog.txt";
         if (args.length > 0) fileName = args[0];
         File file = Util.getFileFromResources(fileName);
         List<City> cities = parseCitiesFromFile(file);

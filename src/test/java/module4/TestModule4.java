@@ -19,7 +19,7 @@ public class TestModule4 {
                 new RegionCounter.RegionCountRow("Алтай", 1),
                 new RegionCounter.RegionCountRow("Челябинская область", 1)
         );
-        List<City> cities = Main.parseCitiesFromFile(Util.getFileFromResources("cities_catalog_for_region_count.txt"));
+        List<City> cities = Main.parseCitiesFromFile(Util.getFileFromResources("cities_catalog.txt"));
         List<RegionCounter.RegionCountRow> regionCountRows = RegionCounter.getRegionCountRows(cities);
         Assert.assertEquals(expected, regionCountRows);
     }
