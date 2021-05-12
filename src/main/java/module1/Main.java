@@ -25,7 +25,7 @@ public class Main {
         List<City> cities = new ArrayList<>();
         Scanner scanner = new Scanner(is);
         while (scanner.hasNext()) {
-            var nextLine = scanner.nextLine();
+            String nextLine = scanner.nextLine();
             if (nextLine.lastIndexOf(";") == nextLine.length() - 1) {
                 nextLine += MOCK;
             }
@@ -51,7 +51,7 @@ public class Main {
     }
 
     public static List<City> parseCitiesFromFile(File file) {
-        try (var fis = new FileInputStream(file)) {
+        try (FileInputStream fis = new FileInputStream(file)) {
             return parseCities(fis);
         } catch (IOException e) {
             e.printStackTrace();
