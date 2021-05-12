@@ -1,8 +1,8 @@
-package module1;
+package util;
 
 import java.io.File;
 
-public class Util {
+public class FileUtil {
     public static File getFileFromProject(String filePath) {
         return new File(System.getProperty("user.dir")+File.separator+filePath);
     }

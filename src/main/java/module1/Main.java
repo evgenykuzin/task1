@@ -1,5 +1,6 @@
 package module1;
 
+import util.FileUtil;
 import util.Printer;
 
 import java.io.File;
@@ -16,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
         String fileName = "cities_catalog.txt";
         if (args.length > 0) fileName = args[0];
-        File file = Util.getFileFromResources(fileName);
+        File file = FileUtil.getFileFromResources(fileName);
         List<City> cities = parseCitiesFromFile(file);
         Printer.printCollection(cities);
     }

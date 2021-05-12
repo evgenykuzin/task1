@@ -2,13 +2,12 @@ package module2;
 
 import module1.City;
 import module1.Main;
-import module1.Util;
 import org.junit.Assert;
 import org.junit.Test;
+import util.FileUtil;
 
 import java.util.List;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 public class TestModule2 {
 
@@ -47,7 +46,7 @@ public class TestModule2 {
     }
 
     private static List<City> getCities() {
-        return Main.parseCitiesFromFile(Util.getFileFromResources("cities_catalog.txt"));
+        return Main.parseCitiesFromFile(FileUtil.getFileFromResources("cities_catalog.txt"));
     }
 
 }

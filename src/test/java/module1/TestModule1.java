@@ -2,6 +2,7 @@ package module1;
 
 import org.junit.Assert;
 import org.junit.Test;
+import util.FileUtil;
 import util.Printer;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class TestModule1 {
                 new City("Королев","Московская область","Центральный",176000,1809),
                 new City("Мытищи", "Московская область", "Центральный", 164600, 1820)
         );
-        List<City> cities = Main.parseCitiesFromFile(Util.getFileFromResources("cities_catalog.txt"));
+        List<City> cities = Main.parseCitiesFromFile(FileUtil.getFileFromResources("cities_catalog.txt"));
         Printer.printCollection(cities);
         Assert.assertEquals(expected, cities);
     }
