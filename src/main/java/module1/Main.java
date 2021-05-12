@@ -1,6 +1,7 @@
 package module1;
 
 import module2.SortCitiesUtil;
+import util.Printer;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -17,7 +18,8 @@ public class Main {
         File file = Util.getFileFromResources(fileName);
         List<City> cities = parseCitiesFromFile(file);
         SortCitiesUtil.sortByName(cities);
-        cities.forEach(System.out::println);
+        Printer.printCollection(cities);
+
     }
 
     public static List<City> parseCities(InputStream is) {

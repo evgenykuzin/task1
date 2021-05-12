@@ -1,6 +1,7 @@
 package module4;
 
 import module1.City;
+import util.Printer;
 
 import java.util.List;
 import java.util.Objects;
@@ -8,12 +9,14 @@ import java.util.stream.Collectors;
 
 public class RegionCounter {
     public static List<RegionCountRow> getRegionCountRows(List<City> cities) {
-        return cities.stream()
+        List<RegionCountRow> regionCountRows = cities.stream()
                 .collect(Collectors.groupingBy(City::getRegion))
                 .entrySet()
                 .stream()
                 .map(entry -> new RegionCountRow(entry.getKey(), entry.getValue().size()))
                 .collect(Collectors.toList());
+        Printer.printCollection(regionCountRows);
+        return regionCountRows;
     }
 
     public static class RegionCountRow {

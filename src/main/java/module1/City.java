@@ -71,7 +71,7 @@ public class City {
 
     @Override
     public String toString() {
-        return "module1.City{" +
+        return "City{" +
                 "name='" + name + '\'' +
                 ", region='" + region + '\'' +
                 ", district='" + district + '\'' +
