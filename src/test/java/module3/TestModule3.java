@@ -12,14 +12,10 @@ public class TestModule3 {
 
     @Test
     public void testParseCities() {
-        List<City> expected = List.of(
-                new City("Адыгейск","Адыгея","Южный","144246","1830"),
-                new City("Майкоп","Адыгея","Южный","233232","1835"),
-                new City("Алтайск","Алтай","Сибирь","232345","1826"),
-                new City("Челябинск","Челябинская область","Урал","","")
-        );
         List<City> cities = Main.parseCitiesFromFile(Util.getFileFromResources("cities_catalog.txt"));
-        Assert.assertEquals(expected, cities);
+        PopulationFilter.PopulationRow populationRow = PopulationFilter.getMaxPopulationRow(cities);
+        PopulationFilter.PopulationRow expected = new PopulationFilter.PopulationRow(1, 233232);
+        Assert.assertEquals(expected, populationRow);
     }
 
 }

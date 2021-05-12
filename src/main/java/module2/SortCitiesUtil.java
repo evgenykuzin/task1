@@ -11,12 +11,14 @@ public class SortCitiesUtil {
         Comparator<City> alphabetComparator =
                 Comparator.comparing(city -> city.getName().toLowerCase(Locale.ROOT));
         cities.sort(alphabetComparator);
+        cities.forEach(System.out::println);
     }
 
     public static void sortByDistrictAndName(List<City> cities) {
         Comparator<City> districtAndNameAlphabetComparator =
                 Comparator.comparing(City::getDistrict).thenComparing(City::getName);
         cities.sort(districtAndNameAlphabetComparator);
+        cities.forEach(System.out::println);
     }
 
 }
