@@ -10,7 +10,8 @@ public class PopulationFilter {
         City[] citiesArray = cities.toArray(new City[0]);
         PopulationRow maxPopulationRow = new PopulationRow(0, citiesArray[0].getPopulation());
         for (int i = 0; i < citiesArray.length; i++) {
-            PopulationRow nextPopulationRow = new PopulationRow(i, citiesArray[i].getPopulation());
+            Integer population = citiesArray[i].getPopulation();
+            PopulationRow nextPopulationRow = new PopulationRow(i, population);
             if (nextPopulationRow.getCount() > maxPopulationRow.getCount()) {
                 maxPopulationRow = nextPopulationRow;
             }
@@ -24,12 +25,8 @@ public class PopulationFilter {
 
         public PopulationRow(Integer index, Integer count) {
             this.index = index;
+            if (count == null) count = 0;
             this.count = count;
-        }
-
-        public PopulationRow(Integer index, String count) {
-            this.index = index;
-            this.count = count.isEmpty() ? 0 : Integer.parseInt(count);
         }
 
         public Integer getIndex() {

@@ -13,7 +13,7 @@ import java.util.function.Function;
 public class TestModule2 {
 
     @Test
-    public void testParseCities() {
+    public void testSortCities() {
         List<City> expected1 = List.of(
                 new City("Адыгейск","Адыгея","Южный",144246,1830),
                 new City("Алтайск","Алтай","Сибирь",232345,1826),

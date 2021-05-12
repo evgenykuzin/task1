@@ -12,7 +12,7 @@ import java.util.Set;
 public class TestModule4 {
 
     @Test
-    public void testParseCities() {
+    public void testRegionCounter() {
         List<RegionCounter.RegionCountRow> expected = List.of(
                 new RegionCounter.RegionCountRow("Адыгея", 2),
                 new RegionCounter.RegionCountRow("Московская область", 4),

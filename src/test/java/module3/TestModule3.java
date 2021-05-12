@@ -11,8 +11,8 @@ import java.util.List;
 public class TestModule3 {
 
     @Test
-    public void test() {
-        List<City> cities = Main.parseCitiesFromFile(Util.getFileFromResources("cities_catalog.txt"));
+    public void testPopulationFilter() {
+        List<City> cities = Main.parseCitiesFromFile(Util.getFileFromResources("cities_catalog_for_population_filter.txt"));
         PopulationFilter.PopulationRow populationRow = PopulationFilter.getMaxPopulationRow(cities);
         PopulationFilter.PopulationRow expected = new PopulationFilter.PopulationRow(3, 1231221);
         Assert.assertEquals(expected, populationRow);

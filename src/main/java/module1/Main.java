@@ -29,7 +29,7 @@ public class Main {
             if (nextLine.lastIndexOf(";") == nextLine.length() - 1) {
                 nextLine += MOCK;
             }
-            var fields = nextLine.split(";");
+            String[] fields = nextLine.split(";");
             City city = new City();
             city.setName(fields[1]);
             city.setRegion(fields[2]);
@@ -42,7 +42,6 @@ public class Main {
             city.setFoundation(foundation);
             cities.add(city);
         }
-
         return cities;
     }
 
