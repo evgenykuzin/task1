@@ -3,9 +3,10 @@ package module1;
 import java.util.Objects;
 
 public class City {
-    private String name, region, district, population, foundation;
+    private String name, region, district;
+    Integer population, foundation;
 
-    public City(String name, String region, String district, String population, String foundation) {
+    public City(String name, String region, String district, Integer population, Integer foundation) {
         this.name = name;
         this.region = region;
         this.district = district;
@@ -28,11 +29,11 @@ public class City {
         this.district = district;
     }
 
-    public void setPopulation(String population) {
+    public void setPopulation(Integer population) {
         this.population = population;
     }
 
-    public void setFoundation(String foundation) {
+    public void setFoundation(Integer foundation) {
         this.foundation = foundation;
     }
 
@@ -48,11 +49,11 @@ public class City {
         return district;
     }
 
-    public String getPopulation() {
+    public Integer getPopulation() {
         return population;
     }
 
-    public String getFoundation() {
+    public Integer getFoundation() {
         return foundation;
     }
 
