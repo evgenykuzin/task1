@@ -1,13 +1,14 @@
-package module2;
+package ru.sberbank.kuzin19190813.module2;
 
-import module1.City;
-import module1.Main;
+import ru.sberbank.kuzin19190813.entities.City;
 import org.junit.Assert;
 import org.junit.Test;
-import util.FileUtil;
 
 import java.util.List;
 import java.util.function.Consumer;
+
+import static ru.sberbank.kuzin19190813.module1.Parser.parseCitiesFromFile;
+import static ru.sberbank.kuzin19190813.util.FileManager.getFromResources;
 
 public class TestModule2 {
 
@@ -45,7 +46,7 @@ public class TestModule2 {
     }
 
     private static List<City> getCities() {
-        return Main.parseCitiesFromFile(FileUtil.getFileFromResources("cities_catalog.txt"));
+        return parseCitiesFromFile(getFromResources("cities_catalog.txt"));
     }
 
 }

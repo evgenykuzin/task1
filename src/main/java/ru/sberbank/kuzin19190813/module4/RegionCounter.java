@@ -1,7 +1,7 @@
-package module4;
+package ru.sberbank.kuzin19190813.module4;
 
-import module1.City;
-import util.Printer;
+import ru.sberbank.kuzin19190813.entities.City;
+import ru.sberbank.kuzin19190813.util.Printer;
 
 import java.util.List;
 import java.util.Objects;

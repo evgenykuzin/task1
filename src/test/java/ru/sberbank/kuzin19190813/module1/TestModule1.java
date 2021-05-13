@@ -1,11 +1,14 @@
-package module1;
+package ru.sberbank.kuzin19190813.module1;
 
 import org.junit.Assert;
 import org.junit.Test;
-import util.FileUtil;
-import util.Printer;
+import ru.sberbank.kuzin19190813.entities.City;
+import ru.sberbank.kuzin19190813.util.Printer;
 
 import java.util.List;
+
+import static ru.sberbank.kuzin19190813.module1.Parser.parseCitiesFromFile;
+import static ru.sberbank.kuzin19190813.util.FileManager.getFromResources;
 
 public class TestModule1 {
 
@@ -21,7 +24,7 @@ public class TestModule1 {
                 new City("Королев","Московская область","Центральный",176000,1809),
                 new City("Мытищи", "Московская область", "Центральный", 164600, 1820)
         );
-        List<City> cities = Main.parseCitiesFromFile(FileUtil.getFileFromResources("cities_catalog.txt"));
+        List<City> cities = parseCitiesFromFile(getFromResources("cities_catalog.txt"));
         Printer.printCollection(cities);
         Assert.assertEquals(expected, cities);
     }
