@@ -1,6 +1,6 @@
-package module3;
+package ru.sberbank.kuzin19190813.module3;
 
-import module1.City;
+import ru.sberbank.kuzin19190813.entities.City;
 
 import java.util.List;
 import java.util.Objects;

@@ -1,12 +1,13 @@
-package module4;
+package ru.sberbank.kuzin19190813.module4;
 
-import module1.City;
-import module1.Main;
+import ru.sberbank.kuzin19190813.entities.City;
 import org.junit.Assert;
 import org.junit.Test;
-import util.FileUtil;
 
 import java.util.List;
+
+import static ru.sberbank.kuzin19190813.module1.Parser.parseCitiesFromFile;
+import static ru.sberbank.kuzin19190813.util.FileManager.getFromResources;
 
 public class TestModule4 {
 
@@ -18,7 +19,7 @@ public class TestModule4 {
                 new RegionCounter.RegionCountRow("Алтай", 1),
                 new RegionCounter.RegionCountRow("Челябинская область", 1)
         );
-        List<City> cities = Main.parseCitiesFromFile(FileUtil.getFileFromResources("cities_catalog.txt"));
+        List<City> cities = parseCitiesFromFile(getFromResources("cities_catalog.txt"));
         List<RegionCounter.RegionCountRow> regionCountRows = RegionCounter.getRegionCountRows(cities);
         Assert.assertEquals(expected, regionCountRows);
     }
